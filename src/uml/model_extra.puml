@@ -1,0 +1,48 @@
+@startuml
+class model.entidade.Cliente
+class model.entidade.Produto
+abstract class model.extra.TableModel{
+    # List<String> colunas
+    + List<String> getColunas()
+    + void setColunas(List<String> colunas)
+    abstract void setColunas()
+    + String getColumnName(int columnIndex)
+    + abstract int getRowCount()
+    + int getColumnCount()
+    + abstract Object getValueAt(int rowIndex, int columnIndex)
+
+}
+class model.extra.ClienteTableModel{
+    - List<Cliente> linhas
+    + ClienteTableModel(List<Cliente> clientes)
+    + ClienteTableModel()
+    + void setLinhas(List<Cliente> clientes)
+    + List<Cliente> getClientes()
+    + Cliente getCliente(int index)
+    + int getRowCount()
+    + Object getValueAt(int rowIndex, int columnIndex)
+}
+class model.extra.ProdutoTableModel{
+    - List<Produto> linhas
+    + ProdutoTableModel(List<Produto> produtos)
+    + ProdutoTableModel()
+    + void setColunas()
+    + List<Produto> getProdutos()
+    + Produto getProduto(int index)
+    + void setLinhas(List<Produto> produtos)
+    + int getRowCount()
+    + Object getValueAt(int rowIndex, int columnIndex)
+}
+class model.extra.VendasTableModel{
+    + VendasTableModel(List<Produto> produtos)
+    + VendasTableModel()
+    + void setColunas()
+    + Object getValueAt(int rowIndex, int columnIndex)
+}
+model.extra.ClienteTableModel --|> model.extra.TableModel
+model.extra.ClienteTableModel ..> model.entidade.Cliente
+model.extra.ProdutoTableModel --|> model.extra.TableModel
+model.extra.ProdutoTableModel ..> model.entidade.Produto
+model.extra.VendasTableModel ..> model.entidade.Produto
+model.extra.VendasTableModel --|> model.extra.ProdutoTableModel
+@enduml

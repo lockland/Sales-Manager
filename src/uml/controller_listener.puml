@@ -1,0 +1,80 @@
+@startuml
+class controller.listener.ClienteActionListener{
+    - ViewCliente viewCliente
+    - List<Cliente> listClientes
+    - JTable tblClientes
+    + ClienteActionListener(ViewCliente viewCliente)
+    + void actionPerformed(ActionEvent ae)
+    - void actionBtnCancelar()
+    - void actionBtnSalvar()
+    # List<String> viewToList()
+    - void salvar(List<String> cliente)
+    - void saveOrUpdate(List<String> cliente)
+    - void update(List<String> cliente)
+    - Cliente parseStringListToObject(List<String> cliente)
+    + void populateJTable()
+    # void clearFields()
+    + void valueChanged(ListSelectionEvent e)
+    - void objectToView(Cliente cliente)
+
+
+}
+class controller.listener.ProdutoActionListener{
+    - ViewProduto viewProduto
+    - JTable tblProdutos
+    + ProdutoActionListener(ViewProduto viewProduto)
+    + void actionPerformed(ActionEvent ae)
+    - void actionBtnSalvar()
+    - void salvar(List<String> produto)
+    - Produto parseStringListToObject(List<String> produto)
+    - List<String> viewToList()
+    - void clearFields()
+    + void populateJTableProdutos()
+    - void configurarTamanhoColunasEAlinhamento()
+
+}
+class controller.listener.VendasActionListener{
+    - ViewVendas viewVendas
+    - JTable tblCompras
+    - List<Produto> estoque
+    + VendasActionListener(ViewVendas viewCompras)
+    + void keyTyped(KeyEvent ke)
+    + void keyPressed(KeyEvent ke)
+    + void keyReleased(KeyEvent ke)
+    + void actionPerformed(ActionEvent ae)
+    - void actionBtnPesquisarC()
+    - void actionBtnPesquisarP()
+    - void actionBtnOk()
+    - void setDadosVenda()
+    - void actionRbtnAVista()
+    - void actionRbtnAPrazo(int meses)
+    - void actionBtnCancelar()
+    - boolean actionBtnSimular(boolean showSucess)
+    - void actionBtnComprar()
+    - void actionJDialog()
+    - int getSelectedRbtn()
+    - List<Produto> getListaProdutosComprasOtimizada()
+    - boolean ProductIsInList(Produto produto, List<Produto> produtos)
+    - void somaQuantidadeDoProduto(Produto produto, List<Produto> produtos)
+    - void clearFields()
+    - void atualizaValorParcela()
+    - double getMontante(int meses)
+    - void coletaDadosEPopulaJTable()
+    - void isProdutoInEstoque(Produto produto, int quantidade)
+    - int validaQuantidadeEAbateDoEstoque(Produto pEstoque, int quantidade)
+    - void validaQuantidade(int qtdProduto, int qtdDigitada)
+    - void addProdutoFromDBInEstoque(Produto produto)
+    - List<Produto> getListProdutos()
+    - Integer[] converteProdutoIdEQuantidade()
+    - void populateJTableCompras(List<Produto> produtos)
+    - void configurarTamanhoColunasEAlinhamento()
+    - void objectToView(Produto produto)
+    - void objectToView(Cliente cliente)
+}
+abstract class controller.extra.AbstractActionListener
+
+controller.listener.VendasActionListener --|> controller.extra.AbstractActionListener
+controller.listener.ProdutoActionListener --|> controller.extra.AbstractActionListener
+controller.listener.ClienteActionListener --|> controller.extra.AbstractActionListener
+
+@enduml

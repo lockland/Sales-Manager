@@ -1,0 +1,216 @@
+@startuml
+class controller.listener.ClienteActionListener
+class controller.listener.ProdutoActionListener
+class controller.listener.VendasActionListener
+class view.windows.ProgramFrm{
+    + ProgramFrm()
+    - void createPanels()
+    - void addPanelsToMainPanel()
+    - void hideAllPanels()
+    - void isMaximizedResizeColumns()
+    - void isNotMaximizedThenExecutePack()
+    - void initComponents()
+    + void windowStateChanged(java.awt.event.WindowEvent evt)
+    + void actionPerformed(java.awt.event.ActionEvent evt)
+    + void actionPerformed(java.awt.event.ActionEvent evt)
+    + void actionPerformed(java.awt.event.ActionEvent evt)
+    - void btn_ProdutosActionPerformed(java.awt.event.ActionEvent evt)
+    - void btn_ClientesActionPerformed(java.awt.event.ActionEvent evt)
+    - void btn_ComprasActionPerformed(java.awt.event.ActionEvent evt)
+    - void formWindowStateChanged(java.awt.event.WindowEvent evt)
+    + static void main(String args[])
+    + void run()
+    - javax.swing.JButton btn_Clientes
+    - javax.swing.JButton btn_Compras
+    - javax.swing.JButton btn_Produtos
+    - javax.swing.JToolBar.Separator jSeparator1
+    - javax.swing.JToolBar.Separator jSeparator2
+    - javax.swing.JToolBar jToolBar1
+    - javax.swing.JPanel panelBox
+}
+class view.windows.ViewCliente{
+    - ClienteActionListener listener
+    - int clienteId
+    + ViewCliente()
+    + ClienteActionListener getClienteActionListener()
+    - void addMaskaraToJFormatField()
+    - void addListenerToButtons()
+    + int getClienteId()
+    + void setClienteId(int clienteId)
+    + JButton getBtn_Cancelar()
+    + void setBtn_Cancelar(JButton btn_Cancelar)
+    + JButton getBtn_Salvar()
+    + void setBtn_Salvar(JButton btn_Salvar)
+    + JPasswordField getPwd_confirmsenha()
+    + void setPwd_confirmsenha(JPasswordField pwd_confirmsenha)
+    + JPasswordField getPwd_senha()
+    + void setPwd_senha(JPasswordField pwd_senha)
+    + JTable getTblClientes()
+    + void setTblClientes(JTable tblClientes)
+    + JTextField getTxt_CPF()
+    + void setTxt_CPF(JFormattedTextField txt_CPF)
+    + JTextField getTxt_Email()
+    + void setTxt_Email(JTextField txt_Email)
+    + JTextField getTxt_Nome()
+    + void setTxt_Nome(JTextField txt_Nome)
+    + JTextField getTxt_limitecredito()
+    + void setTxt_limitecredito(JTextField txt_limitecredito)
+    - void initComponents()
+    + void keyReleased(java.awt.event.KeyEvent evt)
+    - void txt_limitecreditoKeyReleased(java.awt.event.KeyEvent evt)
+    - javax.swing.JButton btn_Cancelar
+    - javax.swing.JButton btn_Salvar
+    - javax.swing.JPanel jPanel1
+    - javax.swing.JScrollPane jScrollPane1
+    - javax.swing.JLabel lbl_CPF
+    - javax.swing.JLabel lbl_Email
+    - javax.swing.JLabel lbl_Nome
+    - javax.swing.JLabel lbl_Senha
+    - javax.swing.JLabel lbl_confirmsenha
+    - javax.swing.JLabel lbl_limitecredito
+    - javax.swing.JPasswordField pwd_confirmsenha
+    - javax.swing.JPasswordField pwd_senha
+    - javax.swing.JTable tblClientes
+    - javax.swing.JFormattedTextField txt_CPF
+    - javax.swing.JTextField txt_Email
+    - javax.swing.JTextField txt_Nome
+    - javax.swing.JTextField txt_limitecredito
+}
+class view.windows.ViewProduto{
+    - ProdutoActionListener listener
+    + ViewProduto()
+    - void initComponents()
+    + ProdutoActionListener getProdutoActionListener()
+    + JButton getBtn_prodSalvar()
+    + void setBtn_prodSalvar(JButton btn_prodSalvar)
+    + JTable getTblProdutos()
+    + void setTblProdutos(JTable tblProdutos)
+    + JTextField getTxt_prodDescricao()
+    + void setTxt_prodDescricao(JTextField txt_prodDescricao)
+    + JTextField getTxt_prodPrecoUnitario()
+    + void setTxt_prodPrecoUnitario(JTextField txt_prodPrecoUnitario)
+    + JTextField getTxt_prodQuantidade()
+    + void setTxt_prodQuantidade(JTextField txt_prodQuantidade)
+    + JTextField getTxt_prodTarifa()
+    + void setTxt_prodTarifa(JTextField txt_prodTarifa)
+    + JTextField getTxt_prodTitulo()
+    + void setTxt_prodTitulo(JTextField txt_prodTitulo)
+    - javax.swing.JButton btn_prodSalvar
+    - javax.swing.JPanel jPanel1
+    - javax.swing.JScrollPane jScrollPane2
+    - javax.swing.JLabel lbl_prodDescricao
+    - javax.swing.JLabel lbl_prodQuantidade
+    - javax.swing.JLabel lbl_prodTarifa
+    - javax.swing.JLabel lbl_prodTitulo
+    - javax.swing.JLabel llbl_prodPrecoUnitario
+    - javax.swing.JTable tblProdutos
+    - javax.swing.JTextField txt_prodDescricao
+    - javax.swing.JTextField txt_prodPrecoUnitario
+    - javax.swing.JTextField txt_prodQuantidade
+    - javax.swing.JTextField txt_prodTarifa
+    - javax.swing.JTextField txt_prodTitulo
+}
+class view.windows.ViewVendas{
+    + ViewVendas()
+    - void addListenerToButtons()
+    + JTextField getTxt_limiteCliente()
+    + void setTxt_limiteCliente(JTextField txt_limiteCliente)
+    + int getClienteId()
+    + void setClienteId(int clienteId)
+    + JButton getBtn_ok()
+    + void setBtn_ok(JButton btn_ok)
+    + JButton getBtn_cancelar()
+    + void setBtn_cancelar(JButton btn_cancelar)
+    + JButton getBtn_comprar()
+    + void setBtn_comprar(JButton btn_comprar)
+    + JButton getBtn_pesCliente()
+    + void setBtn_pesCliente(JButton btn_pesCliente)
+    + JButton getBtn_pesProduto()
+    + void setBtn_pesProduto(JButton btn_pesProduto)
+    + JButton getBtn_simular()
+    + void setBtn_simular(JButton btn_simular)
+    + JRadioButton getRbtn_3x()
+    + void setRbtn_3x(JRadioButton rbtn_3x)
+    + JRadioButton getRbtn_4x()
+    + void setRbtn_4x(JRadioButton rbtn_4x)
+    + JRadioButton getRbtn_5x()
+    + void setRbtn_5x(JRadioButton rbtn_5x)
+    + JRadioButton getRbtn_6x()
+    + void setRbtn_6x(JRadioButton rbtn_6x)
+    + JRadioButton getRbtn_aVista()
+    + void setRbtn_aVista(JRadioButton rbtn_aVista)
+    + JTable getTblCompras()
+    + void setTblCompras(JTable tbl_compras)
+    + JTextField getTxt_cpf()
+    + void setTxt_cpf(JTextField txt_cpf)
+    + JTextField getTxt_descricao()
+    + void setTxt_descricao(JTextField txt_descricao)
+    + JTextField getTxt_email()
+    + void setTxt_email(JTextField txt_email)
+    + JTextField getTxt_nome()
+    + void setTxt_nome(JTextField txt_nome)
+    + JTextField getTxt_pesCliente()
+    + void setTxt_pesCliente(JTextField txt_pesCliente)
+    + JTextField getTxt_precoUnitario()
+    + void setTxt_precoUnitario(JTextField txt_precoUnitario)
+    + JTextField getTxt_quantidade()
+    + void setTxt_quantidade(JTextField txt_quantidade)
+    + JTextField getTxt_subTotal()
+    + void setTxt_subTotal(JTextField txt_subTotal)
+    + JTextField getTxt_valorParcelas()
+    + void setTxt_valorParcelas(JTextField txt_valorParcelas)
+    + JTextField getTxt_pesProduto()
+    + void setTxt_pesProduto(JTextField txt_pesProduto)
+    + JTextField getTxt_valorCompra()
+    + void setTxt_valorCompra(JTextField txt_valorCompra)
+    - void initComponents()
+    - javax.swing.JButton btn_cancelar
+    - javax.swing.JButton btn_comprar
+    - javax.swing.JButton btn_ok
+    - javax.swing.JButton btn_pesCliente
+    - javax.swing.JButton btn_pesProduto
+    - javax.swing.JButton btn_simular
+    - javax.swing.JPanel dadosCliente
+    - javax.swing.JPanel dadosCompra
+    - javax.swing.JPanel dadosProduto
+    - javax.swing.JLabel jLabel1
+    - javax.swing.JLabel jLabel10
+    - javax.swing.JLabel jLabel11
+    - javax.swing.JLabel jLabel12
+    - javax.swing.JLabel jLabel13
+    - javax.swing.JLabel jLabel14
+    - javax.swing.JLabel jLabel2
+    - javax.swing.JLabel jLabel3
+    - javax.swing.JLabel jLabel4
+    - javax.swing.JLabel jLabel5
+    - javax.swing.JLabel jLabel6
+    - javax.swing.JLabel jLabel7
+    - javax.swing.JLabel jLabel8
+    - javax.swing.JLabel jLabel9
+    - javax.swing.JPanel jPanel1
+    - javax.swing.JPanel jPanel2
+    - javax.swing.JScrollPane jScrollPaneCompras
+    - javax.swing.ButtonGroup parcelas
+    - javax.swing.JRadioButton rbtn_3x
+    - javax.swing.JRadioButton rbtn_4x
+    - javax.swing.JRadioButton rbtn_5x
+    - javax.swing.JRadioButton rbtn_6x
+    - javax.swing.JRadioButton rbtn_aVista
+    - javax.swing.JTable tbl_compras
+    - javax.swing.JTextField txt_cpf
+    - javax.swing.JTextField txt_descricao
+    - javax.swing.JTextField txt_email
+    - javax.swing.JTextField txt_limiteCliente
+    - javax.swing.JTextField txt_nome
+    - javax.swing.JTextField txt_pesCliente
+    - javax.swing.JTextField txt_pesProduto
+    - javax.swing.JTextField txt_precoUnitario
+    - javax.swing.JTextField txt_quantidade
+    - javax.swing.JTextField txt_subTotal
+    - javax.swing.JTextField txt_valorCompra
+    - javax.swing.JTextField txt_valorParcelas
+}
+view.windows.ViewCliente ..> controller.listener.ClienteActionListener
+view.windows.ViewProduto ..> controller.listener.ProdutoActionListener
+view.windows.ViewVendas ..> controller.listener.VendasActionListener
+@enduml

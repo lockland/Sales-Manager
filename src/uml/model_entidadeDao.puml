@@ -1,0 +1,44 @@
+@startuml
+class dao.DataBaseSqLite
+class model.entidade.Cliente
+class model.entidade.Produto
+class model.entidade.Venda
+
+class model.entidadeDao.ClienteDao{
+    + DataBaseSqLite db;
+    + ClienteDao(DataBaseSqLite db)
+    + int salvar(Cliente cliente)
+    + void updateCliente(Cliente cliente)
+    + List<Cliente> getListClientes()
+    + Cliente getClienteDoDB(String field)
+    - List<Cliente> mapperCliente(ResultSet resultSet)
+}
+class model.entidadeDao.ProdutoDao{
+    + DataBaseSqLite db;
+    + ProdutoDao(DataBaseSqLite db)
+    + int salvar(Produto produto)
+    + void update(Produto produto)
+    + List<Produto> getListProdutos()
+    + Produto getProdutoDoDb(int field)
+    - List<Produto> mapperProduto(ResultSet resultSet)
+
+}
+
+class model.entidadeDao.VendasDao{
+    + DataBaseSqLite db;
+    + VendasDao(DataBaseSqLite db)
+    + int salvar(int idCliente, List<Produto> produtosCompra, 
+    - void inserirTabelaVendasProduto(int idCompra, int idCliente, 
+    - void updateLimiteCliente(int id, double valorParcela, int qtdParcelas)
+    - void updateQtdProdutosEmEstoque(List<Produto> estoque)
+
+}
+model.entidadeDao.ClienteDao --* dao.DataBaseSqLite
+model.entidadeDao.ClienteDao --* model.entidade.Cliente
+model.entidadeDao.ProdutoDao --* dao.DataBaseSqLite
+model.entidadeDao.ProdutoDao --* model.entidade.Produto
+model.entidadeDao.VendasDao --* dao.DataBaseSqLite
+model.entidadeDao.VendasDao --* model.entidade.Cliente
+model.entidadeDao.VendasDao --* model.entidade.Produto
+model.entidadeDao.VendasDao --* model.entidade.Venda
+@enduml

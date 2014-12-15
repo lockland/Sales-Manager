@@ -1,0 +1,17 @@
+@startuml
+abstract class controller.extra.AbstractActionListener{
+    # TableColumn getColumnFromTable()
+    # void defineAlignment()
+    # DefaultTableCellRenderer getAlign()
+}
+class java.util.List
+class javax.swing.JTable
+class javax.swing.SwingConstants
+class javax.swing.table.DefaultTableCellRenderer
+class javax.swing.table.TableColumn
+controller.extra.AbstractActionListener ..> java.util.List
+controller.extra.AbstractActionListener ..> javax.swing.JTable
+controller.extra.AbstractActionListener ..> javax.swing.SwingConstants
+controller.extra.AbstractActionListener ..> javax.swing.table.DefaultTableCellRenderer
+controller.extra.AbstractActionListener ..> javax.swing.table.TableColumn
+@enduml

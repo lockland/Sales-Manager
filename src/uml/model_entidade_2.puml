@@ -1,0 +1,61 @@
+@startuml
+class model.entidade.HomeShopping{
+    - Produto[] p
+    - int qtdeProduto
+    + HomeShopping(int qtdeProduto)
+    + void registraProduto(String titulo, String descricao, double preco, double tarifa)
+    + Produto pesquisaProduto(int codigo)
+    + void compraProduto(int codigo, int qtdeComprada)
+    + boolean verificaEstoqueProduto(int codigo, int qtdeVendida)
+    + void vendeProduto(int codigo, int qtdeVendida)
+    - int getQtdeProduto()
+    - void setQtdeProduto(int qtdeProduto)
+}
+
+class model.entidade.Produto{
+    - int id
+    - String titulo
+    - String descricao
+    - double precoUnitario
+    - double tarifaEntregaUnidade
+    - int qtdeEstoque
+    + Produto(String titulo, String descricao, double preco, double tarifa)
+    + Produto(String titulo, String descricao, double precoUnitario, double tarifaEntregaUnidade, int qtdeEstoque)
+    + Produto(int id, String titulo, String descricao, double precoUnitario, double tarifaEntregaUnidade, int qtdeEstoque)
+    + Produto(Produto produto)
+    + Produto()
+    + void adicionaProdutosAoEstoque(int qtdeUnidades)
+    + int abateProdutosDoEstoque(int qtdeUnidades)
+    + int getId()
+    + void setId(int id)
+    + String getTitulo()
+    + void setTitulo(String titulo)
+    + String getDescricao()
+    + void setDescricao(String descricao)
+    + double getPrecoUnitario()
+    + void setPrecoUnitario(double precoUnitario)
+    + double getTarifaEntregaUnidade()
+    + void setTarifaEntregaUnidade(double tarifaEntregaUnidade)
+    + int getQtdeEstoque()
+    + void setQtdeEstoque(int qtdeEstoque)
+    + String toString()
+
+}
+class model.entidade.Venda{
+    - int id
+    - int qtdParcelas
+    - double valorParcelas
+    - double valorTotal
+    + Venda(int id, int qtdParcelas, double valorParcelas)
+    + Venda(int qtdParcelas, double valorParcelas)
+    + Venda()
+    + int getId()
+    + void setId(int id)
+    + int getQtdParcelas()
+    + void setQtdParcelas(int qtdParcelas)
+    + double getValorParcelas()
+    + double getValorTotal()
+    + String toString()
+
+}
+@enduml

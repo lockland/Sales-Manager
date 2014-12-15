@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Lockland/Documents/NetBeansProjects/sales_manager/src/model/entidade/Cliente.java</file>
+            <file>file:/C:/Users/Lockland/Documents/NetBeansProjects/sales_manager/src/Test/Report.java</file>
+            <file>file:/C:/Users/Lockland/Documents/NetBeansProjects/sales_manager/src/dao/DataBaseSqLite.java</file>
+            <file>file:/C:/Users/Lockland/Documents/NetBeansProjects/sales_manager/src/model/entidadeDao/ProdutoDao.java</file>
+            <file>file:/C:/Users/Lockland/Documents/NetBeansProjects/sales_manager/src/model/entidadeDao/ClienteDao.java</file>
+            <file>file:/C:/Users/Lockland/Documents/NetBeansProjects/sales_manager/src/controller/listener/VendasActionListener.java</file>
+            <file>file:/C:/Users/Lockland/Documents/NetBeansProjects/sales_manager/src/model/entidadeDao/VendasDao.java</file>
+        </group>
+    </open-files>
+</project-private>

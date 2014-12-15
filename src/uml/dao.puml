@@ -1,0 +1,28 @@
+@startuml
+class dao.DataBaseSqLite {
+    - String Driver
+    - String File
+    - String Url
+    - Connection conn
+    - PreparedStatement pstmt
+    - boolean transaction
+    + DataBaseSqLite()
+    + void connect()
+    + boolean isTransaction()
+    + void create()
+    + void enableForeign_keys(boolean isEnable)
+    + void startTransaction()
+    + void commit()
+    + void rollback()
+    + ResultSet executeQuery(String query, Object... fields)
+    + ResultSet executeQuery(String query)
+    + int executeUpdateAndReturn(String query, Object... fields)
+    + void executeUpdate(String query, Object... fields)
+    + void executeUpdate(String query)
+    + int lastId()
+    + void close()
+    - void closePreparedStatement()
+    - void closeConnection()
+
+}
+@enduml

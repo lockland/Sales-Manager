@@ -1,0 +1,48 @@
+@startuml
+class model.entidade.Administrador{
+    - String dataAdmissao
+    + Administrador(String senha, String data)
+    + String getDataAdmissao()
+    + void setDataAdmissao(String data)
+
+}
+class model.entidade.Cliente{
+    - String cpf
+    - String nome
+    - String email
+    - String dataCadastro
+    - double limitecredito
+    + Cliente(int id, String nome, String email, String cpf, double limitecredito, String senha)
+    + Cliente(String nome, String email, String cpf, String senha, double limitecredito)
+    + Cliente(int id, String nome, String email, String cpf, String senha, String dataCadastro, double limitecredito)
+    + String getCpf()
+    + void setCpf(String cpf)
+    + String getNome()
+    + void setNome(String nome)
+    + String getEmail()
+    + void setEmail(String email)
+    + String getDataCadastro()
+    + void setDataCadastro(String dataCadastro)
+    + double getLimitecredito()
+    + void setLimitecredito(double limitecredito)
+    - Date getCorrentDate()
+    + String getDateEnUs()
+    + String getDatePtBr()
+    + String toString()
+}
+
+class model.entidade.Pessoa{
+    - int id
+    - String senha
+    + Pessoa(String senha)
+    + Pessoa(int id, String senha)
+    + Pessoa()
+    + int getId()
+    + void setId(int id)
+    + String getSenha()
+    + void setSenha(String senha)
+}
+
+model.entidade.Administrador --|> model.entidade.Pessoa
+model.entidade.Cliente --|> model.entidade.Pessoa
+@enduml

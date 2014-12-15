@@ -1,0 +1,27 @@
+@startuml
+class model.entidade.Promocao{
+    - int id
+    - double precoPromocional
+    - Produto produto
+    - Date dataInicio
+    - Date dataFim
+    + Promocao(int id, double precoPromocional, Produto produto, Date dataInicio, Date dataFim)
+    + Promocao(double precoPromocional, Produto produto, Date dataInicio, Date dataFim)
+    + Promocao()
+    + String toString()
+    + void setId(int id)
+    + void setPrecoPromocional(double precoPromocional)
+    + void setProduto(Produto produto)
+    + void setDataInicio(Date dataInicio)
+    + void setDataFim(Date dataFim)
+    + int getId
+    + double getPrecoPromocional
+    + Produto getProduto
+    + Date getDataInicio
+    + Date getDataFim
+    
+
+}
+
+model.entidade.Promocao --* java.sql.Date
+@enduml

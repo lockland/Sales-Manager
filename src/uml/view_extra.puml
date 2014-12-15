@@ -1,0 +1,11 @@
+@startuml
+class view.extra.ShowMessageDialog{
+    + {static} void error(Object message, String title)
+    + {static} void success(Object message, String title)
+    + {static} int questionDialog(Object message, String title)
+}
+
+interface java.io.Serializable
+view.extra.ShowMessageDialog --|> javax.swing.JOptionPane
+view.extra.ShowMessageDialog --|> java.io.Serializable
+@enduml
